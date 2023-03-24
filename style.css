@@ -1,0 +1,15 @@
+/*
+    Grade Calculator 
+    S Dowling 21189994
+    24 03 2023
+*/
+body{
+    background-color:grey;
+    text-align: center;
+}
+
+div{
+    margin:auto;
+    padding:50px;
+    text-align: center;
+}
