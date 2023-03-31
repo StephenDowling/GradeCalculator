@@ -1,20 +1,29 @@
 /*
-    Grade Calculator 
+    Week 10 Lab
     S Dowling 21189994
-    24 03 2023
+    31 03 2023
 */
 
-function calculate(){
-    //declare
-    let numSubjects=0;
-    let sumOfMarks=0;
-    var average;
-    var grade;
+var numSubjects;
+var sumOfMarks=0;
+var arr=[];
+var average;
+var grade;
 
+function calculate(){
+    
     numSubjects=parseInt(prompt("How many subjects did you take?"));
-    for(i=1;i<=numSubjects;i++){
-        sumOfMarks=sumOfMarks+parseFloat(prompt("Please enter the mark you received in each subject"));
+    
+    for(i=0;i<numSubjects;i++){
+        arr[i]=parseFloat(prompt("Please enter the mark you received for subject number "+(i+1)));
+        sumOfMarks=sumOfMarks+arr[i];
     }
+    document.getElementById("main").innerHTML+=("Your results are: ");
+    
+    for(i=0;i<numSubjects;i++){
+        document.getElementById("main").innerHTML+=(arr[i]+", ");
+    }
+    
     //compute
     average=sumOfMarks/numSubjects;
     if(average<40&&average>=0){
@@ -33,8 +42,8 @@ function calculate(){
         grade='A';
     }
     else{
-        alert(("Please provide a mark above zero and a valid number of subjects taken"));
+        document.getElementById("average").innerHTML+=("Please provide a mark above zero and a valid number of subjects taken");
     }
     //output 
-    alert(("Your average grade was "+average+". Your grade is "+grade+"."));
+    document.getElementById("average").innerHTML+=(("Your average grade was "+average+". Your grade is "+grade+"."));
 }
